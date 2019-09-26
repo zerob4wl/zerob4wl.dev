@@ -1,0 +1,23 @@
+{
+  "name": "zerob4wl.dev",
+  "version": "1.0.0",
+  "description": "Personal Blog",
+  "main": "index.js",
+  "repository": "https://github.com/zerob4wl/zerob4wl.dev.git",
+  "author": "zerob4wl@gmail.com",
+  "license": "Apache License 2.0",
+  "private": false,
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.22.12"
+  }
+}
