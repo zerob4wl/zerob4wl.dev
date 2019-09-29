@@ -2,13 +2,14 @@ import MicroApp from "./MicroApp";
 
 class MicroAppManager {
     
-    constructor(root){
+    constructor(root, eventManager){
         this._root = root;
+        this._eventManager = eventManager;
         this._apps = {};
     };
 
     initMicroApp ({name, app, element = document.createElement('div')}) {
-        const microApp = new MicroApp({ app, element });
+        const microApp = new MicroApp({ app, element , eventManager : this._eventManager});
         this._root.appendChild(element);
         this._addAppToApps({name, microApp});
         return microApp;

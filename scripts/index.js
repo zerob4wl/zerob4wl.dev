@@ -1,13 +1,14 @@
 import 'babel-polyfill'
 import MicroAppManager from "./MicroAppManager";
+import EventManager from './EventManager';
 
 class Apper {
    constructor() {} 
    
    init({element = document.body}) {
         this._applicationRoot = element;
-        this._MicroAppManager = new MicroAppManager(element);
-        console.log(element);
+        this._eventManager = new EventManager();
+        this._MicroAppManager = new MicroAppManager(element, this._eventManager);
    }
 
    addMicroApp({name, app, element}) {

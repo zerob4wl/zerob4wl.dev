@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import "./style.scss";
 import App from "./index.jsx";
 
-export function Starter (microApp) {
+export function Starter (element, eventManager) {
     ReactDOM.render(
-        <App/>,
-        microApp.element
+        <App eventManager={eventManager}/>,
+        element
     )
 }

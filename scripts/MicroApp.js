@@ -1,16 +1,17 @@
 class MicroApp {
-    constructor({app, element}){
-        this.app = app;
-        this.element = element;
+    constructor({app, element, eventManager}){
+        this._app = app;
+        this._element = element;
+        this._eventManager = eventManager;
     }
 
     render(string) {
-        this.element.innerHTML = string;
+        this._element.innerHTML = string;
     }
 
     async start() {
-        const app = await this.app;
-        app.Starter(this);
+        const app = await this._app;
+        app.Starter(this._element, this._eventManager);
     }
 }
 

@@ -7,8 +7,10 @@ export default class App extends React.Component {
     }
     componentDidMount() {
         setInterval(()=>{
-            this.setState({time: new Date()});
-        });
+            const newTime = new Date();
+            this.setState({time: newTime});
+            this.props.eventManager.emit('body.time', newTime);
+        },1000);
     }
 
     render() {
